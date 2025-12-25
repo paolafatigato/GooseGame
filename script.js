@@ -23,7 +23,7 @@ const ALL_TOKENS = [
     { id: 12, name: 'Player 12', emoji: '🧜‍♀️', position: 1 },
     { id: 13, name: 'Player 13', emoji: '🧚', position: 1 },
     { id: 14, name: 'Player 14', emoji: '🦋', position: 1 },  
-    { id: 15, name: 'Player 15', emoji: '🥸', position: 1 },
+    { id: 15, name: 'Player 15', emoji: '🐥', position: 1 },
     { id: 16, name: 'Player 16', emoji: '💩', position: 1 },
     { id: 17, name: 'Player 17', emoji: '🤖', position: 1 },
     { id: 18, name: 'Player 18', emoji: '😸', position: 1 },
