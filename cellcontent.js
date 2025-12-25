@@ -6,46 +6,58 @@ const EVENT_TILES = [6, 13, 20, 27, 34, 48, 55, 62];
 
 // Category data structure (solo contenuti testuali)
 const CATEGORIES = {
-    base: {
-        name: "Base",
-        questions: [
-            "Qual è la capitale dell'Italia?",
-            "Quanti continenti ci sono nel mondo?",
-            "Chi ha scritto la Divina Commedia?",
-            "Quanto fa 7 x 8?",
-            "Qual è l'animale più veloce del mondo?",
-            "In che anno è caduto il muro di Berlino?",
-            "Qual è il pianeta più grande del sistema solare?",
-            "Chi ha dipinto la Gioconda?",
-            "Qual è la montagna più alta del mondo?"
-        ],
-        events: [
-            "Vai avanti di 3 caselle!",
-            "Torna indietro di 2 caselle!",
-            "Salta un turno!",
-            "Tira di nuovo i dadi!",
-            "Scambia posizione con un altro giocatore!",
-            "Vai alla casella 30!",
-            "Torna alla casella 1!",
-            "Avanza fino alla prossima casella speciale!"
-        ],
-        normalTiles: [
-            "Partenza",
-            "Domanda 2...",
-            "Domanda 3...",
-            " ",
-            "Domanda 5...",
-            "Domanda 5...",
-            "Arrivo! Hai vinto!"
-        ]
-    },
+
 
 rivers: {
   name: "Fiumi",
 
   // Domande rosa (carte domanda)
   questions: [
-    "Che cos'è l'alveo di un fiume?",
+    "Completa un cruciverba di geografia insieme agli altri giocatori; allo scattare dei 4 minuti, avanza di tante caselle quante parole hai scritto.",
+    "In 5 minuti, mima parole relative alla geografia senza parlare. Avanzi di 1 casella per ogni parola indovinata (anche chi la indovina avanza).",
+    "In 4 minuti, mima parole relative alla geografia senza parlare. Avanzi di 1 casella per ogni parola indovinata (anche chi la indovina avanza).",
+    "Ripassa ad alta voce il significato di ‘meandro’ e ‘affluente’.",
+    "Nomina un fiume italiano e indica in quale mare sfocia.",
+    "Nomina un fiume europeo e lo Stato principale che attraversa.",
+    "Spiega la differenza tra sorgente e foce.",
+    "Indica un esempio di sport praticato nei fiumi e spiega se può essere pericoloso.",
+    "Nomina un possibile effetto positivo di una diga.",
+    "Nomina un possibile effetto negativo dell’inquinamento su un fiume.",
+    "Racconta un fiume che conosci vicino a casa tua o nella tua regione.",
+    "Spiega perché è importante proteggere gli argini dei fiumi.",
+    "Nomina un animale che vive in ambiente fluviale.",
+    "Nomina una città europea famosa per il fiume che la attraversa."
+    
+  ],
+
+  // Imprevisti verdi (dal pdf + aggiunte) [file:2]
+  events: [
+    "Descrivi un fiume famoso (es. Nilo, Po, Danubio...) senza dire il suo nome. Chi lo indovina avanza di 3 caselle insieme a te!",
+    "Tutti i giocatori nominano a turno un fiume italiano o europeo. Chi resta per ultimo senza sbagliare o ripetere avanza di 3 caselle!",
+    "Indica il fiume Volga sulla cartina di pag. 163. Se ci riesci, avanza di 2 caselle; se sbagli retrocedi di 1.",
+    "Indica il fiume Po sulla cartina della classe. Se sbagli, stai fermo il prossimo turno e tutti avanzano di 1.",
+    "Il giocatore alla tua destra sceglie un fiume da pagina 147, il primo di voi a trovarlo nella cartina avanza di 2.",
+    "Il giocatore alla tua sinistra sceglie un fiume da pagina 147, il primo di voi a trovarlo nella cartina avanza di 2.",
+    "Ogni giocatore dice una parola collegata al fiume che inizia con l’iniziale del suo nome (Paola → “piena”); l’ultimo retrocede di 1.",
+    "Ogni giocatore, partendo da te, dice una parola collegata al fiume che inizia con la lettera A, poi B, ecc. Chi non trova parole retrocede di 1.",
+    "Scambia la tua pedina con quella di un altro giocatore a tua scelta. Se è il primo, perdi 1 turno.",
+    "Mulino: fai una domanda di storia ad un compagno a tua scelta; se risponde bene, avanza di 1 casella.",
+    "Diga: stai fermo un turno.",
+    "Meandro: fai un’ampia curva che ti tiene lontano dalla foce, retrocedi di 1.",
+    "Affluente: un fiume si getta nelle tue acque aumentando la tua portata, avanzi di 1!",
+    "Tutti i giocatori nominano a turno un fattore di inquinamento fluviale. Chi resta per ultimo senza sbagliare o ripetere avanza di 3 caselle!",
+
+    // nuovi imprevisti aggiunti
+    "Piena improvvisa: il fiume esonda, torna alla casella fiume precedente.",
+    "Secca estiva: il corso d’acqua si riduce, salta il prossimo turno.",
+    "Argine rotto: aiuta a sistemarlo! Ferma il gioco per un turno e poi avanza di 2 caselle.",
+    "Centrale idroelettrica: l’energia del fiume ti dà una spinta, avanza di 3 caselle.",
+    "Inquinamento: lancia il dado; se esce pari retrocedi di 2, se esce dispari resta dove sei.",
+    "Navigazione fluviale: prendi una scorciatoia in battello, vai alla prossima casella foce."
+  ],
+
+  // Caselle normali gialle (attività brevi) [file:2]
+  normalContents: ["Che cos'è l'alveo di un fiume?",
     "Quali sono le due principali tipologie di foce di un fiume?",
     "Cosa sono gli affluenti?",
     "Quali caratteristiche ha il corso di un fiume in alta pianura?",
@@ -77,50 +89,6 @@ rivers: {
     "Come si chiamano rocce, rami e sassi trascinati a valle dal fiume?",
     "Come si chiama la parete costruita per arginare l’acqua?",
     "Perché si costruiscono le dighe?"
-  ],
-
-  // Imprevisti verdi (dal pdf + aggiunte) [file:2]
-  events: [
-    "Descrivi un fiume famoso (es. Nilo, Po, Danubio...) senza dire il suo nome. Chi lo indovina avanza di 3 caselle insieme a te!",
-    "Tutti i giocatori nominano a turno un fiume italiano o europeo. Chi resta per ultimo senza sbagliare o ripetere avanza di 3 caselle!",
-    "Indica il fiume Volga sulla cartina di pag. 163. Se ci riesci, avanza di 2 caselle; se sbagli retrocedi di 1.",
-    "Indica il fiume Po sulla cartina della classe. Se sbagli, stai fermo il prossimo turno e tutti avanzano di 1.",
-    "Il giocatore alla tua destra sceglie un fiume da pagina 147, il primo di voi a trovarlo nella cartina avanza di 2.",
-    "Il giocatore alla tua sinistra sceglie un fiume da pagina 147, il primo di voi a trovarlo nella cartina avanza di 2.",
-    "Ogni giocatore dice una parola collegata al fiume che inizia con l’iniziale del suo nome (Paola → “piena”); l’ultimo retrocede di 1.",
-    "Ogni giocatore, partendo da te, dice una parola collegata al fiume che inizia con la lettera A, poi B, ecc. Chi non trova parole retrocede di 1.",
-    "Scambia la tua pedina con quella di un altro giocatore a tua scelta. Se è il primo, perdi 1 turno.",
-    "Mulino: fai una domanda di storia ad un compagno a tua scelta; se risponde bene, avanza di 1 casella.",
-    "Diga: stai fermo un turno.",
-    "Meandro: fai un’ampia curva che ti tiene lontano dalla foce, retrocedi di 1.",
-    "Affluente: un fiume si getta nelle tue acque aumentando la tua portata, avanzi di 1!",
-    "Tutti i giocatori nominano a turno un fattore di inquinamento fluviale. Chi resta per ultimo senza sbagliare o ripetere avanza di 3 caselle!",
-
-    // nuovi imprevisti aggiunti
-    "Piena improvvisa: il fiume esonda, torna alla casella fiume precedente.",
-    "Secca estiva: il corso d’acqua si riduce, salta il prossimo turno.",
-    "Argine rotto: aiuta a sistemarlo! Ferma il gioco per un turno e poi avanza di 2 caselle.",
-    "Centrale idroelettrica: l’energia del fiume ti dà una spinta, avanza di 3 caselle.",
-    "Inquinamento: lancia il dado; se esce pari retrocedi di 2, se esce dispari resta dove sei.",
-    "Navigazione fluviale: prendi una scorciatoia in battello, vai alla prossima casella foce."
-  ],
-
-  // Caselle normali gialle (attività brevi) [file:2]
-  normalContents: [
-    "Completa un cruciverba di geografia insieme agli altri giocatori; allo scattare dei 4 minuti, avanza di tante caselle quante parole hai scritto.",
-    "In 5 minuti, mima parole relative alla geografia senza parlare. Avanzi di 1 casella per ogni parola indovinata (anche chi la indovina avanza).",
-    "In 4 minuti, mima parole relative alla geografia senza parlare. Avanzi di 1 casella per ogni parola indovinata (anche chi la indovina avanza).",
-    "Ripassa ad alta voce il significato di ‘meandro’ e ‘affluente’.",
-    "Nomina un fiume italiano e indica in quale mare sfocia.",
-    "Nomina un fiume europeo e lo Stato principale che attraversa.",
-    "Spiega la differenza tra sorgente e foce.",
-    "Indica un esempio di sport praticato nei fiumi e spiega se può essere pericoloso.",
-    "Nomina un possibile effetto positivo di una diga.",
-    "Nomina un possibile effetto negativo dell’inquinamento su un fiume.",
-    "Racconta un fiume che conosci vicino a casa tua o nella tua regione.",
-    "Spiega perché è importante proteggere gli argini dei fiumi.",
-    "Nomina un animale che vive in ambiente fluviale.",
-    "Nomina una città europea famosa per il fiume che la attraversa."
   ]
 },
 
