@@ -128,12 +128,14 @@ body {
 .token-select h2 {
     text-align: center;
     margin-bottom: 8px;
+    color: #FF4B4A;
 }
 
 .token-select p {
     text-align: center;
     font-size: 0.9em;
     margin-bottom: 12px;
+    color: #FFA99C ;
 }
 
 .token-grid {
@@ -154,6 +156,7 @@ body {
     background-color: rgba(243, 235, 222, 0.8);
     cursor: pointer;
     transition: transform 0.15s, border-color 0.15s, background-color 0.15s;
+    color: #114948;
 }
 
 .token-card:hover {
@@ -170,8 +173,8 @@ body {
 }
 
 .token-card--selected {
-    border-color: #114948;
-    background-color: rgba(255, 154, 84, 0.4);
+    border-color: #F3EBDE;
+    background-color: #F1FF9D;
 }
 
 #startGameBtn {
@@ -183,7 +186,15 @@ body {
     border: none;
     cursor: pointer;
     font-weight: bold;
+    background-color: #FF4B4A;
+    color: #F3EBDE;
 }
+
+#startGameBtn:hover{
+    background-color: #004D40;
+    color: #F3EBDE;
+}
+
 
 header {
     position: fixed;
