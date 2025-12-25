@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GooseGame</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <h1>🪿 GOOSEGAME</h1>
+        <select id="categorySelect">
+            <option value="base">Base</option>
+            <option value="rivers">RIVERS</option>
+            <option value="leopardi">Leopardi</option>
+            <option value="gettingToKnow">Getting to Know Each Other</option>
+        </select>
+    </header>
+
+
+<div id="tokenSelect" class="token-select">
+  <h2>Seleziona le pedine</h2>
+  <p>Clicca sulle pedine che parteciperanno alla partita, poi premi “Inizia”.</p>
+
+  <div id="tokenGrid" class="token-grid"></div>
+
+  <button id="startGameBtn">Inizia partita</button>
+</div>
+
+
+    <!-- BOARD CONTAINER -->
+    <div class="board-container">
+        <div class="board" id="gameBoard"></div>
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <p class="modal-text" id="modalText"></p>
+            <button class="modal-close" id="modalClose">Chiudi</button>
+        </div>
+    </div>
+
+    <!-- prima i contenuti, poi la logica -->
+    <script src="cellcontent.js"></script>
+    <script src="script.js"></script>
+
+    <footer class="site-footer">
+         Ms Fatigato
+    </footer>
+</body>
+</html>

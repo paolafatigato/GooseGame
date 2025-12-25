@@ -1,0 +1,435 @@
+@font-face {
+    font-family: 'Beach Cottage';
+    src: url('BeachCottage.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* =======================================================
+   PALETTE GLOBALE - RUOLI PER OGNI CATEGORIA
+   (CAMBIA SOLO I VALORI, NON I NOMI DELLE VARIABILI)
+   ======================================================= */
+:root {
+    /* ---------- BASE ---------- */
+    --base-body-bg: #F3EBDE;
+    --base-body-text: #114948;
+
+    --base-header-bg: #114948;
+    --base-header-text: #F3EBDE;
+
+    --base-tile-bg-normal: #F1FF9D;
+    --base-tile-bg-default: #FFA99C;
+
+    --base-btn-question-bg: #FF4B4A;
+    --base-btn-question-text: #F3EBDE;
+
+    --base-btn-event-bg: #FF9A54;
+    --base-btn-event-text: #F3EBDE;
+
+    --base-modal-overlay: rgba(17, 73, 72, 0.9);
+    --base-modal-bg: #F3EBDE;
+    --base-modal-border: #FF4B4A;
+    --base-modal-btn-bg: #FF4B4A;
+    --base-modal-btn-text: #F3EBDE;
+
+    /* ---------- RIVERS ---------- */
+    --rivers-body-bg: #E0F7FA;
+    --rivers-body-text: #004D40;
+
+    --rivers-header-bg: #004D40;
+    --rivers-header-text: #E0F7FA;
+
+    --rivers-tile-bg-normal: #B2EBF2;
+    --rivers-tile-bg-default: #B2EBF2;
+
+    --rivers-btn-question-bg: #0288D1;
+    --rivers-btn-question-text: #E0F7FA;
+
+    --rivers-btn-event-bg: #4DD0E1;
+    --rivers-btn-event-text: #004D40;
+
+    --rivers-modal-overlay: rgba(0, 96, 100, 0.8);
+    --rivers-modal-bg: #E0F7FA;
+    --rivers-modal-border: #006064;
+    --rivers-modal-btn-bg: #006064;
+    --rivers-modal-btn-text: #E0F7FA;
+
+    /* ---------- LEOPARDI ---------- */
+    --leopardi-body-bg: #F4F1EA;
+    --leopardi-body-text: #3E2723;
+
+    --leopardi-header-bg: #3E2723;
+    --leopardi-header-text: #F4F1EA;
+
+    --leopardi-tile-border: #3E2723;
+    --leopardi-tile-bg-normal: #EFEBE9;
+    --leopardi-tile-bg-default: #EFEBE9;
+
+    --leopardi-btn-question-bg: #795548;
+    --leopardi-btn-question-text: #F4F1EA;
+
+    --leopardi-btn-event-bg: #D7CCC8;
+    --leopardi-btn-event-text: #3E2723;
+
+    --leopardi-modal-overlay: rgba(62, 39, 35, 0.8);
+    --leopardi-modal-bg: #F4F1EA;
+    --leopardi-modal-border: #5D4037;
+    --leopardi-modal-btn-bg: #5D4037;
+    --leopardi-modal-btn-text: #F4F1EA;
+
+    /* ---------- GETTING TO KNOW ---------- */
+    --gtk-body-bg: #FFF8E1;
+    --gtk-body-text: #4E342E;
+
+    --gtk-header-bg: #FFB300;
+    --gtk-header-text: #4E342E;
+
+    --gtk-tile-border: #4E342E;
+    --gtk-tile-bg-normal: #FFF3E0;
+    --gtk-tile-bg-default: #FFF3E0;
+
+    --gtk-btn-question-bg: #FFCA28;
+    --gtk-btn-question-text: #4E342E;
+
+    --gtk-btn-event-bg: #FFCC80;
+    --gtk-btn-event-text: #4E342E;
+
+    --gtk-modal-overlay: rgba(255, 179, 0, 0.8);
+    --gtk-modal-bg: #FFF8E1;
+    --gtk-modal-border: #FB8C00;
+    --gtk-modal-btn-bg: #FB8C00;
+    --gtk-modal-btn-text: #FFF8E1;
+
+    /* VARIABILI GENERICHE USATE DAL CSS (riempite dal JS) */
+    --body-bg: #F3EBDE;
+    --body-text: #114948;
+    --header-bg: #114948;
+    --header-text: #F3EBDE;
+    --tile-bg-normal: #F1FF9D;
+    --tile-bg-default: #FFA99C;
+    --btn-question-bg: #00666A;
+    --btn-question-text: #F3EBDE;
+    --btn-event-bg: #FF9A54;
+    --btn-event-text: #114948;
+    --modal-overlay: rgba(17, 73, 72, 0.9);
+    --modal-bg: #F3EBDE;
+    --modal-border: #FF4B4A;
+    --modal-btn-bg: #FF4B4A;
+    --modal-btn-text: #F3EBDE;
+}
+
+/* RESET GENERALE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY: usa sempre la palette generica */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--body-bg);
+    color: var(--body-text);
+    padding-bottom: 20px;
+}
+
+/* =======================================================
+   STILI GENERICI (COMUNI A TUTTE LE CATEGORIE)
+   ======================================================= */
+.token-select {
+    margin-top: 100px;
+    padding: 20px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.token-select h2 {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.token-select p {
+    text-align: center;
+    font-size: 0.9em;
+    margin-bottom: 12px;
+}
+
+.token-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.token-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-color: rgba(243, 235, 222, 0.8);
+    cursor: pointer;
+    transition: transform 0.15s, border-color 0.15s, background-color 0.15s;
+}
+
+.token-card:hover {
+    transform: scale(1.05);
+}
+
+.token-card__emoji {
+    font-size: 1.8em;
+    margin-bottom: 4px;
+}
+
+.token-card__name {
+    font-size: 0.75em;
+}
+
+.token-card--selected {
+    border-color: #114948;
+    background-color: rgba(255, 154, 84, 0.4);
+}
+
+#startGameBtn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    background-color: var(--header-bg);
+    color: var(--header-text);
+}
+
+header h1 {
+    font-size: 2em;
+    letter-spacing: 2px;
+}
+
+header select {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: 2px solid currentColor;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.board-container {
+    margin-top: 100px;
+    padding: 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 8px;
+}
+
+/* TILE STYLING */
+.tile {
+    aspect-ratio: 1;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    position: relative;
+    transition: transform 0.2s;
+    overflow: hidden;
+    background-color: var(--tile-bg-default);
+}
+
+.tile:hover {
+    transform: scale(1.05);
+}
+
+/* caselle normali con testo */
+.tile.normal {
+    background-color: var(--tile-bg-normal);
+}
+
+/* NUMERI DELLE CASELLE: IN ALTO, CENTRATI ORIZZONTALMENTE */
+.tile-number {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    /*font-family: 'Beach Cottage';*/
+    font-size: 1.4em;
+    font-weight: 700;
+    pointer-events: none;
+    z-index: 1;
+    color: var(--body-text);
+}
+
+/* BOTTONI FULL SIZE */
+.tile-button {
+    position: absolute;
+    inset: 0;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 2em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, background-color 0.2s, color 0.2s;
+    z-index: 2;
+}
+
+.tile-button:hover {
+    transform: scale(1.05);
+}
+
+/* COLORI BOTTONI IN FUNZIONE DEL TIPO */
+.tile.question .tile-button {
+    background-color: var(--btn-question-bg);
+    color: var(--btn-question-text);
+}
+
+.tile.event .tile-button {
+    background-color: var(--btn-event-bg);
+    color: var(--btn-event-text);
+}
+
+/* TESTO CASELLE NORMALI */
+.tile-text {
+    position: absolute;
+    bottom: 6px;
+    left: 4px;
+    right: 4px;
+    text-align: center;
+    font-size: 0.75em;
+    font-weight: bold;
+    line-height: 1.2;
+}
+.player-token {
+    background: transparent;
+    border: none;
+    font-size: 1.6em;
+    cursor: pointer;
+    margin: 20px 2px;
+}
+
+.player-token--selected {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+.tokens-container {
+    position: absolute;
+    bottom: 4px;
+    left: 4px;
+    right: 4px;
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    z-index: 4;
+}
+
+
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--modal-overlay);
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    position: relative;
+    border: 4px solid var(--modal-border);
+    background-color: var(--modal-bg);
+}
+
+.modal-text {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.modal-close {
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    display: block;
+    margin: 0 auto;
+    transition: all 0.3s;
+    background-color: var(--modal-btn-bg);
+    color: var(--modal-btn-text);
+}
+
+.site-footer {
+    margin-top: 20px;
+    padding: 10px 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.9em;
+    color: var(--btn-event-bg);
+}
+
+
+.modal-close:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .board {
+        grid-template-columns: repeat(7, 1fr);
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .tile-number {
+        font-size: 1.3em;
+    }
+}
