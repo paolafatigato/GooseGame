@@ -1,7 +1,7 @@
 // ============================================
 // GAME STATE
 // ============================================
-let currentCategory = 'base';
+let currentCategory = 'gettingToKnow';
 
 
 // ============================================
@@ -16,9 +16,9 @@ const ALL_TOKENS = [
     { id: 5, name: 'Player 5', emoji: '👽', position: 1 },
     { id: 6, name: 'Player 6', emoji: '🤓', position: 1 },
     { id: 7, name: 'Player 7', emoji: '🦑', position: 1 },
-    { id: 8, name: 'Player 8', emoji: '🥸', position: 1 },
+    { id: 8, name: 'Player 8', emoji: '🦝', position: 1 },
     { id: 9, name: 'Player 9', emoji: '💃', position: 1 },
-    { id: 10, name: 'Player 10', emoji: '🏃‍♀️‍➡️', position: 1 },
+    { id: 10, name: 'Player 10', emoji: '🐰', position: 1 },
     { id: 11, name: 'Player 11', emoji: '👨‍🦽‍➡️', position: 1 },
     { id: 12, name: 'Player 12', emoji: '🧜‍♀️', position: 1 },
     { id: 13, name: 'Player 13', emoji: '🧚', position: 1 },
@@ -55,6 +55,8 @@ const decksByCategory = {};// per ogni categoria teniamo tre mazzi
 // FUNCTIONS
 // ============================================
 
+
+// mostra la griglia di pedine selezionabili
 function renderTokenSelection() {
     tokenGrid.innerHTML = '';
 
@@ -82,6 +84,7 @@ function renderTokenSelection() {
     });
 }
 
+// crea l’array players dalle pedine selezionate
 function setupPlayersFromSelectedTokens() {
     const selectedCards = tokenGrid.querySelectorAll('.token-card--selected');
     const chosen = [];
@@ -103,6 +106,7 @@ function setupPlayersFromSelectedTokens() {
     selectedPlayerId = null;
 }
 
+// CLICK SU "INIZIA PARTITA"
 startGameBtn.addEventListener('click', () => {
     setupPlayersFromSelectedTokens();
 
@@ -115,7 +119,14 @@ startGameBtn.addEventListener('click', () => {
     tokenSelect.style.display = 'none';
     boardContainer.style.display = 'block';
 
-    applyCategoryTheme(currentCategory); // se usi il sistema di palette
+    // imposta come prima categoria "gettingToKnow"
+    currentCategory = 'gettingToKnow';
+    if (categorySelect) {
+        categorySelect.value = 'gettingToKnow';
+    }
+
+    applyCategoryTheme(currentCategory);
+    updateBodyCategoryClass();
     renderBoard();
 });
 
@@ -346,7 +357,6 @@ function changeCategory(newCategory) {
 function applyCategoryTheme(categoryKey) {
     const root = document.documentElement;
     const prefixMap = {
-        base: 'base',
         rivers: 'rivers',
         leopardi: 'leopardi',
         gettingToKnow: 'gtk'
