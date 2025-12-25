@@ -10,27 +10,7 @@
    (CAMBIA SOLO I VALORI, NON I NOMI DELLE VARIABILI)
    ======================================================= */
 :root {
-    /* ---------- BASE ---------- */
-    --base-body-bg: #F3EBDE;
-    --base-body-text: #114948;
 
-    --base-header-bg: #114948;
-    --base-header-text: #F3EBDE;
-
-    --base-tile-bg-normal: #F1FF9D;
-    --base-tile-bg-default: #FFA99C;
-
-    --base-btn-question-bg: #FF4B4A;
-    --base-btn-question-text: #F3EBDE;
-
-    --base-btn-event-bg: #FF9A54;
-    --base-btn-event-text: #F3EBDE;
-
-    --base-modal-overlay: rgba(17, 73, 72, 0.9);
-    --base-modal-bg: #F3EBDE;
-    --base-modal-border: #FF4B4A;
-    --base-modal-btn-bg: #FF4B4A;
-    --base-modal-btn-text: #F3EBDE;
 
     /* ---------- RIVERS ---------- */
     --rivers-body-bg: #E0F7FA;
@@ -61,7 +41,6 @@
     --leopardi-header-bg: #3E2723;
     --leopardi-header-text: #F4F1EA;
 
-    --leopardi-tile-border: #3E2723;
     --leopardi-tile-bg-normal: #EFEBE9;
     --leopardi-tile-bg-default: #EFEBE9;
 
@@ -78,26 +57,25 @@
     --leopardi-modal-btn-text: #F4F1EA;
 
     /* ---------- GETTING TO KNOW ---------- */
-    --gtk-body-bg: #FFF8E1;
-    --gtk-body-text: #4E342E;
+    --gtk-body-bg: #F3EBDE;
+    --gtk-body-text: #FF4B4A;
 
-    --gtk-header-bg: #FFB300;
-    --gtk-header-text: #4E342E;
+    --gtk-header-bg: #006064;
+    --gtk-header-text: #F3EBDE;
 
-    --gtk-tile-border: #4E342E;
-    --gtk-tile-bg-normal: #FFF3E0;
+    --gtk-tile-bg-normal: #FFA99C;
     --gtk-tile-bg-default: #FFF3E0;
 
-    --gtk-btn-question-bg: #FFCA28;
-    --gtk-btn-question-text: #4E342E;
+    --gtk-btn-question-bg: #00666A;
+    --gtk-btn-question-text: #F1FF9D;
 
-    --gtk-btn-event-bg: #FFCC80;
-    --gtk-btn-event-text: #4E342E;
+    --gtk-btn-event-bg: #FF4B4A;
+    --gtk-btn-event-text: #F1FF9D;
 
-    --gtk-modal-overlay: rgba(255, 179, 0, 0.8);
-    --gtk-modal-bg: #FFF8E1;
-    --gtk-modal-border: #FB8C00;
-    --gtk-modal-btn-bg: #FB8C00;
+    --gtk-modal-overlay: #f0ff9d8b;
+    --gtk-modal-bg: #F3EBDE;
+    --gtk-modal-border: #FF9A54;
+    --gtk-modal-btn-bg: #FFA99C;
     --gtk-modal-btn-text: #FFF8E1;
 
     /* VARIABILI GENERICHE USATE DAL CSS (riempite dal JS) */
@@ -432,4 +410,8 @@ header select {
     .tile-number {
         font-size: 1.3em;
     }
+    .player-token {
+    font-size: 1.6em;
+    margin: 8px 2px;
+}
 }
